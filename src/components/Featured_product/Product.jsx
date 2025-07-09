@@ -1,6 +1,6 @@
 import React from "react";
 import products from "./data.js"
-import "./featuredProduct.css"
+import "./product.css"
 
 const ProductCard = ({ product }) => {
   return (
