@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { FaShoppingCart, FaUser, FaBars, FaSearch } from "react-icons/fa";
-import AccountModal from "./AccountModal";
+import AccountModal from "../accountmodal/AccountModal";
 import "./header.css";
 
 const Header = () => {
