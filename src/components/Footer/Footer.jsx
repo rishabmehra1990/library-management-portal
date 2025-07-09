@@ -1,7 +1,7 @@
 import React from "react";
-import "./Footer.css";
+import "./footer.css";
 
-export default function Footer() {
+const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-top">
@@ -30,4 +30,4 @@ export default function Footer() {
         </footer>
     );
 }
-
+export default Footer
