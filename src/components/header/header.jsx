@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { FaShoppingCart, FaUser, FaBars, FaSearch } from "react-icons/fa";
-import AccountModal from "./modal-popup";
+import AccountModal from "../accountmodal/AccountModal";
 import "./header.css";
 
 const Header = () => {
@@ -63,7 +63,6 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Render modal absolutely, after header */}
       {showAccountModal && (
         <AccountModal
           onClose={() => setShowAccountModal(false)}
