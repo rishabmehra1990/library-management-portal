@@ -3,11 +3,11 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 600px;
-  padding: 32px 16px;
+  padding: 32px 30px;
   margin: 0 auto 40px;
-  max-width: 1200px;
+  max-width: 1100px;
 }
 
 .slide{
@@ -43,9 +43,77 @@
 }
 
 .arrow-left{
-  left: 1rem;
+  left: 2rem;
 }
 
 .arrow-right{
   right: 2rem;
+}
+
+/* @media (max-width: 768px) {
+  .banner {
+    height: 60vh;
+    padding: 1rem;
+  }
+
+  .arrow {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 30vh;
+  }
+
+  .arrow-left, .arrow-right {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .arrow {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+} */
+
+@media (max-width: 768px) {
+  .banner {
+    height: 60vh;
+    padding: 1rem;
+  }
+
+  .arrow {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .arrow-left {
+    left: 10px;
+  }
+
+  .arrow-right {
+    right: 10px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .banner {
+    height: 30vh;
+  }
+
+  .arrow {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .arrow-left {
+    left: 6px;
+  }
+
+  .arrow-right {
+    right: 6px;
+  }
 }

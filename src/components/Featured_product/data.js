@@ -1,10 +1,9 @@
 import img1 from '../../assets/deep_work.jpg';
 import img2 from '../../assets/atomicHabits.png';
-import img3 from '../../assets/the_power_of_now.jpeg';
-import img4 from '../../assets/the_subtle_art.jpeg';
+import img3 from '../../assets/the_power_of_now.jpg';
+import img4 from '../../assets/the_subtle_art.jpg';
 import img5 from '../../assets/cant_hurt_me.jpg';
 import img6 from '../../assets/think_like_a_monk.jpg';
-
 
 const products = [
   {
@@ -55,8 +54,6 @@ const products = [
     price: 280,
     image: img6
   },
-  
 ];
 
 export default products;
-
