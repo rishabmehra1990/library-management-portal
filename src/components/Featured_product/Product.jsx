@@ -1,5 +1,4 @@
 import React from "react";
-import products from "./data.js"
 import "./product.css"
 
 const ProductCard = ({ product }) => {
@@ -23,7 +22,7 @@ const ProductCard = ({ product }) => {
   );
 };
 
-const Product = () => {
+const Product = ({ products }) => {
 
   const ProductList = () => {
     return products.map((product) => <ProductCard key={product.id} product={product} />);
