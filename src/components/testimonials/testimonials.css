@@ -56,13 +56,25 @@
   font-style: italic;
   line-height: 1.8;
   color: #555;
-  margin-bottom: 20px;
+  margin-bottom: 6px;
   font-weight: 400;
   max-width: 80%;
 }
 
 .testimonial-rating {
   padding-bottom: 12px;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.star-icon {
+  color: #fbc02d;
+  font-size: 18px;
 }
 
 .testimonial-name {
