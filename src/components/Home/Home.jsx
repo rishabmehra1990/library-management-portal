@@ -1,17 +1,12 @@
 import { useState, useEffect } from 'react';
 import Product from '../Featured_product/Product'
+import fetchData from '../util/api';
 
 const Home = () => {
      const [products, setProducts] = useState([]);
-    
+
       useEffect(() => {
-      fetch("http://localhost:4000/books")
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return res.json(); 
-        })
+      fetchData("books")
         .then((data) => {
           setProducts(data); 
         })
