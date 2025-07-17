@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./testimonials.css";
-import testimonialsData from "./testimonial";
 
 const TestimonialsData = ({ testimonials, currentIndex }) => {
   return (
@@ -17,7 +16,13 @@ const TestimonialsData = ({ testimonials, currentIndex }) => {
             alt={testimonial.name}
             className="testimonial-image"
           />
-          <p className="testimonial-text">{testimonial.text}</p>
+          <p className="testimonial-text">{testimonial.description}</p>
+          <p className="testimonial-rating">
+            {" "}
+            {[...Array(testimonial.rating)].map((_, i) => (
+              <i key={i} className="fa-solid fa-star" style={{ color: "#fbc02d", marginLeft: "4px" }}></i>
+            ))}
+          </p>
           <p className="testimonial-name">{testimonial.name}</p>
         </div>
       ))}
@@ -25,25 +30,25 @@ const TestimonialsData = ({ testimonials, currentIndex }) => {
   );
 };
 
-const Testimonials = () => {
+const Testimonials = ({ testimonials }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === testimonialsData.length - 1 ? 0 : prevIndex + 1
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
     }, 4200);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials]);
 
   return (
     <div className="testimonial-wrapper">
       <h2 className="testimonial-heading">Testimonial</h2>
       <div className="testimonial-slider">
         <TestimonialsData
-          testimonials={testimonialsData}
+          testimonials={testimonials}
           currentIndex={currentIndex}
         />
       </div>
