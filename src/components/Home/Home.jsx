@@ -1,25 +1,18 @@
 import { useState, useEffect } from 'react';
-import Product from '../Featured_product/Product'
-import fetchData from '../util/api';
+import Product from '../Product/Product'
 
 const Home = () => {
-     const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
-      useEffect(() => {
-      fetchData("books")
-        .then((data) => {
-          setProducts(data); 
-        })
-        .catch((err) => {
-          console.error("Failed to fetch products:", err);
-        });
-    }, []);
-    
-    return (
-        <div>
-            <Product products={products}/>
-        </div>
-    )
+  useEffect(() => {
+    GetAllBooks(setProducts);
+  }, []);
+
+  return (
+    <div>
+      <Product products={products} />
+    </div>
+  )
 }
 
 export default Home

@@ -1,0 +1,203 @@
+.featured-section {
+    padding: 32px 30px;
+    background-color: #f9f9f9;
+    margin: 0 auto 40px;
+    max-width: 1100px;
+    width: 90%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.featured-section h2 {
+    position: relative;
+    left: 0;
+}
+
+.featured-title {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: left;
+    padding: 0 85px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-list {
+    display: flex;
+    gap: 24px;
+    padding: 0 16px 24px;
+    overflow-x: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.product-card {
+    width: 200px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.product-image {
+    position: relative;
+    height: 160px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    height: 100%;
+    width: 80%;
+    object-fit: contain;
+}
+
+.rent-label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #facc15;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.product-info {
+    padding: 12px;
+    font-size: 14px;
+}
+
+.product-title {
+    color: #1e40af;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.product-desc {
+    font-size: 12px;
+    height: 60px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.product-price {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 12px;
+}
+
+.discounted-price {
+    color: brown;
+    font-weight: bold;
+}
+
+.wishlist-btn {
+    background: none;
+    color: #16a34a;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.wishlist-btn:hover {
+    text-decoration: underline;
+}
+
+.rent-btn {
+    background-color: #1f2937;
+    color: white;
+    font-size: 12px;
+    padding: 6px 0;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.no-products-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #080101;
+}
+
+.rent-btn:hover {
+    background-color: #374151;
+}
+
+@media (max-width: 768px) {
+    .featured-title {
+        font-size: 1.25rem;
+        padding: 0 16px;
+        text-align: center;
+    }
+
+    .featured-section {
+        padding: 15px 10px;
+    }
+
+    .product-desc {
+        height: 70px;
+        overflow: hidden;
+    }
+
+    .product-list {
+        gap: 12px;
+        padding: 0 10px 20px;
+    }
+
+    .product-card {
+        width: 200px;
+        min-height: 370px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .product-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f4f4f4;
+    }
+
+    .product-title {
+        height: 40px;
+        overflow: hidden;
+    }
+
+    .product-image img {
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .product-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .product-price {
+        padding-top: 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
