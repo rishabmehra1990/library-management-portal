@@ -19,10 +19,16 @@ const Testimonials = ({ testimonials }) => {
     <div className="testimonial-wrapper">
       <h2 className="testimonial-heading">Testimonial</h2>
       <div className="testimonial-slider">
-        <TestimonialsData
-          testimonials={testimonials}
-          currentIndex={currentIndex}
-        />
+        {(!testimonials || testimonials.length === 0) ? (
+          <p className="no-testimonials-message">
+            No testimonials available or failed to load testimonials.
+          </p>
+        ) : (
+          <TestimonialsData
+            testimonials={testimonials}
+            currentIndex={currentIndex}
+          />
+        )}
       </div>
     </div>
   );

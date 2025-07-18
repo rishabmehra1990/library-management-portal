@@ -83,6 +83,15 @@
   color: #3883e6;
 }
 
+.no-testimonials-message {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 1.1rem;
+}
+
 @media (max-width: 768px) {
   .testimonial-wrapper {
     width: 90%;
