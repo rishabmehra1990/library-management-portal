@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react';
 import Product from '../Product/Product'
+import GetData from '../util/GetData';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    GetAllBooks(setProducts);
+    const Products = async () => {
+    const response = await GetData("books");
+    setProducts(response);
+  };
+  Products();
   }, []);
 
   return (
@@ -15,4 +20,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
