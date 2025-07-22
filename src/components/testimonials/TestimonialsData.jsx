@@ -1,4 +1,12 @@
-import StarRating from "./StarRating";
+const StarRating = ({ rating }) => {
+  return (
+    <div className="star-rating">
+      {[...Array(rating)].map((_, i) => (
+        <i key={i} className="fa-solid fa-star star-icon"></i>
+      ))}
+    </div>
+  );
+};
 
 const TestimonialsData = ({ testimonials, currentIndex }) => {
   return (

@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import Testimonials from "../testimonials/Testimonials";
-import GetTestimonials from "../util/GetTestimonials";
+import GetData from "../util/GetData";
 
 function Home() {
     const [testimonials, setTestimonials] = useState([]);
 
-  useEffect(() => {
-    GetTestimonials(setTestimonials);
-  }, []);
+useEffect(() => {
+  const fetchTestimonials = async () => {
+    const response = await GetData("testimonials");
+    setTestimonials(response);
+  };
+  fetchTestimonials();
+}, []);
 
   return (
     <div>
