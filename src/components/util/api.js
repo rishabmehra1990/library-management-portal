@@ -11,4 +11,4 @@ const fetchData = async (resource) => {
   }
 };
 
-export default fetchData
+export default fetchData;
