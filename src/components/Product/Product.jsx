@@ -33,7 +33,7 @@ const Product = ({ products }) => {
       <h2 className="featured-title">Featured Product</h2>
       <div className="featured-section">
         <div className="product-list">
-          {!products && products.length === 0 ? (
+          {!products || products.length === 0 ? (
             <p className="no-products-message">No products available or failed to load products.</p>
           ) : (
             ProductList()

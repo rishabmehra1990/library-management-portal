@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Product from '../Product/Product'
+import Testimonials from '../testimonials/Testimonials'
 import GetData from '../util/GetData';
 
 const Home = () => {
@@ -7,16 +8,24 @@ const Home = () => {
   const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
-     const fetchTestimonials = async () => {
-     const response = await GetData("testimonials");
-      setTestimonials(response);
-     };
+    const fetchTestimonials = async () => {
+      const response = await GetData("testimonials");
+      if (response) {
+        setTestimonials(response);
+      } else {
+        setTestimonials([]);
+      }
+    };
     const Products = async () => {
-    const response = await GetData("books");
-    setProducts(response);
-  };
-  Products();
-  fetchTestimonials();
+      const response = await GetData("books");
+      if (response) {
+        setProducts(response);
+      } else {
+        setProducts([]);
+      }
+    };
+    Products();
+    fetchTestimonials();
   }, []);
 
   return (

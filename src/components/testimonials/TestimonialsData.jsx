@@ -24,9 +24,9 @@ const TestimonialsData = ({ testimonials, currentIndex }) => {
             className="testimonial-image"
           />
           <p className="testimonial-text">{testimonial.description}</p>
-          <p className="testimonial-rating">
+          <div className="testimonial-rating">
             <StarRating rating={testimonial.rating} />
-          </p>
+          </div>
           <p className="testimonial-name">{testimonial.name}</p>
         </div>
       ))}
