@@ -1,23 +1,30 @@
-import { useEffect, useState } from "react";
-import Testimonials from "../testimonials/Testimonials";
-import GetData from "../util/GetData";
+import { useState, useEffect } from 'react';
+import Product from '../Product/Product'
+import GetData from '../util/GetData';
 
-function Home() {
-    const [testimonials, setTestimonials] = useState([]);
+const Home = () => {
+  const [products, setProducts] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
 
-useEffect(() => {
-  const fetchTestimonials = async () => {
-    const response = await GetData("testimonials");
-    setTestimonials(response);
+  useEffect(() => {
+     const fetchTestimonials = async () => {
+     const response = await GetData("testimonials");
+      setTestimonials(response);
+     };
+    const Products = async () => {
+    const response = await GetData("books");
+    setProducts(response);
   };
+  Products();
   fetchTestimonials();
-}, []);
+  }, []);
 
   return (
     <div>
-      <div><Testimonials testimonials={testimonials}/></div>
+      <Product products={products} />
+      <Testimonials testimonials={testimonials} />
     </div>
-  );
+  )
 }
 
-export default Home
+export default Home;

@@ -1,5 +1,4 @@
 import React from "react";
-import products from "./data.js"
 import "./product.css"
 
 const ProductCard = ({ product }) => {
@@ -23,7 +22,7 @@ const ProductCard = ({ product }) => {
   );
 };
 
-const Product = () => {
+const Product = ({ products }) => {
 
   const ProductList = () => {
     return products.map((product) => <ProductCard key={product.id} product={product} />);
@@ -34,7 +33,11 @@ const Product = () => {
       <h2 className="featured-title">Featured Product</h2>
       <div className="featured-section">
         <div className="product-list">
-          {ProductList()}
+          {!products && products.length === 0 ? (
+            <p className="no-products-message">No products available or failed to load products.</p>
+          ) : (
+            ProductList()
+          )}
         </div>
       </div>
     </div>
