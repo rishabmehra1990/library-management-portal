@@ -1,0 +1,43 @@
+.dashboard-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #f7fafd;
+  padding: 20px;
+  border-radius: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background-color: #ffffff;
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  gap: 15px;
+}
+
+.icon {
+  font-size: 24px;
+  color: #1f4a82;
+}
+
+.label {
+  color: #555;
+  margin: 0;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 5px 0;
+  color: #222;
+}
+
+.avatars {
+  display: flex;
+  margin-top: 5px;
+}
