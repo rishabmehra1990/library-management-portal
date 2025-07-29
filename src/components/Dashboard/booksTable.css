@@ -1,4 +1,4 @@
-.student-table-container {
+.books-table-container {
   background: #fff;
   padding: 24px;
   border-radius: 12px;
@@ -6,7 +6,7 @@
   margin: 20px;
 }
 
-.student-table-header {
+.books-table-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,46 +14,46 @@
   flex-wrap: wrap;
 }
 
-.student-table-header h2 {
+.books-table-header h2 {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
 }
 
-.student-table-actions {
+.books-table-actions {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.student-table-actions input {
+.books-table-actions input {
   padding: 6px 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
   outline: none;
 }
 
-.student-table-actions select {
+.books-table-actions select {
   padding: 6px 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
   outline: none;
 }
 
-.student-table {
+.books-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.student-table thead {
+.books-table thead {
   background-color: #f8f9fa;
   color: #666;
   font-size: 14px;
   text-align: left;
 }
 
-.student-table th,
-.student-table td {
+.books-table th,
+.books-table td {
   padding: 12px 16px;
   border-bottom: 1px solid #eee;
 }

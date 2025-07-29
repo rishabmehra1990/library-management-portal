@@ -1,20 +1,14 @@
-import "./studentTable.css";
+import "./booksTable.css";
+import books from "./BooksDb.js";
 
-const students = [
-    { book: "Atomic Habits", booksQuantity: "12", id: "001", BorrowingDate: "10/06/25", ReturnDate: "Pending", status: "Active" },
-    { book: "The peace of now", booksQuantity: "7", id: "002", BorrowingDate: "20/04/25", ReturnDate: "18/05/25", status: "Inactive" },
-    { book: "IkiGai", booksQuantity: "20", id: "003", BorrowingDate: "05/05/25", ReturnDate: "30/05/25", status: "Inactive" },
-    { book: "Biology", booksQuantity: "15", id: "004", BorrowingDate: "02/04/25", ReturnDate: "Pending", status: "Active" },
-];
-
-const StudentTable = () => {
+const BooksTable = () => {
     return (
-        <div className="student-table-container">
-            <div className="student-table-header">
+        <div className="books-table-container">
+            <div className="books-table-header">
                 <div>
-                    <h2>All Students</h2>
+                    <h2>All Books</h2>
                 </div>
-                <div className="student-table-actions">
+                <div className="books-table-actions">
                     <input type="text" placeholder="Search" />
                     <select>
                         <option>Newest</option>
@@ -23,7 +17,7 @@ const StudentTable = () => {
                 </div>
             </div>
 
-            <table className="student-table">
+            <table className="books-table">
                 <thead>
                     <tr>
                         <th>Book</th>
@@ -35,7 +29,7 @@ const StudentTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {students.map((s, index) => (
+                    {books.map((s, index) => (
                         <tr key={index}>
                             <td>{s.book}</td>
                             <td>{s.booksQuantity}</td>
@@ -56,4 +50,4 @@ const StudentTable = () => {
     );
 };
 
-export default StudentTable;
+export default BooksTable;
