@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./accountmodal.css";
 
 const AccountModal = ({ onClose, buttonRef }) => {
   const modalRef = useRef();
   const [position, setPosition] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (buttonRef.current) {
@@ -51,7 +53,7 @@ const AccountModal = ({ onClose, buttonRef }) => {
         <li><button>Promote Books</button></li>
         <li><button>Checkout</button></li>
         <li><button>Wishlist</button></li>
-        <li><button>Login</button></li>
+        <li><button onClick={() => navigate("/login")}>Admin Login</button></li>
         <li><button>Register</button></li>
       </ul>
     </div>
