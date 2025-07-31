@@ -1,4 +1,4 @@
-import fetchData from "./api";
+import { fetchData } from "./api";
 
 const GetData = async (resource) => {
   try {
