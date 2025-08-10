@@ -15,6 +15,12 @@
     text-align: center;
 }
 
+.error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+
 .login-box h2 {
     margin-bottom: 1.5rem;
     color: #333;
