@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer'
 import Login from './components/Login/Login'
 import Dashboard from './components/Dashboard/Dashboard';
+import ProtectedRoute from './components/util/ProctedRoute';
 import './App.css'
 
 function App() {
@@ -21,7 +22,15 @@ function App() {
           </div>
         } />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute
+              Component={Dashboard}
+              authCheckUrl="http://localhost:4000/auth/dashboard"
+            />
+          }
+        />
       </Routes>
     </Router>
   )
