@@ -1,26 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { FaShoppingCart, FaUser, FaBars, FaSearch } from "react-icons/fa";
-import AccountModal from "../accountmodal/AccountModal";
 import "./header.css";
 
 const Header = () => {
   const [cartCount] = useState(0);
-  const [showAccountModal, setShowAccountModal] = useState(false);
-  const accountBtnRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (
-        showAccountModal &&
-        !e.target.closest(".account-dropdown") &&
-        !e.target.closest(".account-button")
-      ) {
-        setShowAccountModal(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [showAccountModal]);
 
   return (
     <>
@@ -54,21 +37,14 @@ const Header = () => {
           <div className="account-wrapper">
             <button
               className="account-button"
-              onClick={() => setShowAccountModal((prev) => !prev)}
-              ref={accountBtnRef}
+              onClick={() => navigate("/login")}
             >
-              Account <FaUser />
+              Login
+              <FaUser />
             </button>
           </div>
         </div>
       </header>
-
-      {showAccountModal && (
-        <AccountModal
-          onClose={() => setShowAccountModal(false)}
-          buttonRef={accountBtnRef}
-        />
-      )}
     </>
   );
 }
