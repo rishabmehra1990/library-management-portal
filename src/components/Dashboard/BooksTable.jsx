@@ -5,6 +5,9 @@ import "./booksTable.css"
 
 const BooksTable = () => {
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [currentCount, setCurrentCount] = useState(0);
+  const [totalCount, setTotalCount] = useState(0);
 
   const columns = [
     { key: "book_name", header: "Book" },
@@ -30,12 +33,35 @@ const BooksTable = () => {
     </tr>
   );
 
+  const fetchInventoryData = useCallback(async () => {
+    try {
+      let url = "inventory";
+      if (searchTerm.trim() !== "") {
+        url = `inventory/search?search=${searchTerm}`;
+      }
+      const data = await GetData(url);
+      return data || [];
+    } catch (error) {
+      return [];
+    }
+  }, [searchTerm]);
+
+  const handleCountChange = useCallback((displayed, total) => {
+    setCurrentCount(displayed);
+    setTotalCount(total);
+  }, []);
+
   return (
     <div className="books-table-container">
       <div className="books-table-header">
-        <h2>All Books</h2>
+        <h2>All Books {totalCount > 0 && `(${currentCount} of ${totalCount})`}</h2>
         <div className="books-table-actions">
-          <input type="text" placeholder="Search" />
+          <input
+            type="text"
+            placeholder="Search by book name"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
           <button className="add-book-btn" onClick={() => navigate("/dashboard/addbook")}>
             Add Book
           </button>
@@ -43,10 +69,11 @@ const BooksTable = () => {
       </div>
 
       <OnScrollPagination
-        InventoryData={() => GetData("inventory")}
+        InventoryData={fetchInventoryData}
         columns={columns}
         rowRenderer={rowRenderer}
         LIMIT={10}
+        onCountChange={handleCountChange}
       />
     </div>
   );
