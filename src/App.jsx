@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer'
 import Login from './components/Login/Login'
 import Dashboard from './components/Dashboard/Dashboard';
 import ProtectedRoute from './components/util/ProctedRoute';
+import AddBook from './components/AddBook/AddBook';
 import './App.css'
 
 function App() {
@@ -27,6 +28,15 @@ function App() {
           element={
             <ProtectedRoute
               Component={Dashboard}
+              authCheckUrl="http://localhost:4000/auth/dashboard"
+            />
+          }
+        />
+        <Route
+          path="/dashboard/addbook"
+          element={
+            <ProtectedRoute
+              Component={AddBook}
               authCheckUrl="http://localhost:4000/auth/dashboard"
             />
           }
