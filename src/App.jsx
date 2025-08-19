@@ -5,7 +5,7 @@ import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer'
 import Login from './components/Login/Login'
 import Dashboard from './components/Dashboard/Dashboard';
-import ProtectedRoute from './components/util/ProtectedRoute';
+import ProtectedRoute from './components/util/ProctedRoute';
 import AddBook from './components/AddBook/AddBook';
 import './App.css'
 
