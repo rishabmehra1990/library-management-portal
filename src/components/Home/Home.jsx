@@ -1,39 +1,26 @@
-import { useState, useEffect } from 'react';
-import Product from '../Product/Product'
-import Testimonials from '../testimonials/Testimonials'
-import GetData from '../util/GetData';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Product from '../Product/Product';
+import Testimonials from '../testimonials/Testimonials';
+import { fetchProducts } from '../redux/slices/productReducer.js';
+import { fetchTestimonials } from '../redux/slices/testimonialReducer';
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);
+  const dispatch = useDispatch();
+  const { items: products } = useSelector((state) => state.products);
+  const { items: testimonials } = useSelector((state) => state.testimonials);
 
   useEffect(() => {
-    const fetchTestimonials = async () => {
-      const response = await GetData("testimonials");
-      if (response) {
-        setTestimonials(response);
-      } else {
-        setTestimonials([]);
-      }
-    };
-    const Products = async () => {
-      const response = await GetData("books");
-      if (response) {
-        setProducts(response);
-      } else {
-        setProducts([]);
-      }
-    };
-    Products();
-    fetchTestimonials();
-  }, []);
+    dispatch(fetchProducts());
+    dispatch(fetchTestimonials());
+  }, [dispatch]);
 
   return (
     <div>
       <Product products={products} />
       <Testimonials testimonials={testimonials} />
     </div>
-  )
-}
+  );
+};
 
 export default Home;
